@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume &mdash; Karthikeyan Sivaraman</title>
+  <meta name="description" content="Resume of Karthikeyan Sivaraman, Data engineering, analytics, ML and AI engineering.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .resume-header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .resume-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+    .resume-section {
+      margin-bottom: 2.2rem;
+    }
+    .job-item {
+      margin-bottom: 1.75rem;
+    }
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .job-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
+    .job-company {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .job-dates {
+      font-family: var(--mono-stack);
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    .bullet-list {
+      margin: 0.5rem 0 0 1.25rem;
+      padding: 0;
+    }
+    .bullet-list li {
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Karthikeyan Sivaraman</a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html">Overview</a>
+        <a href="flagship-a.html">Flagship A (Predictive Maintenance)</a>
+        <a href="projects.html">Projects</a>
+        <a href="videos.html">Videos</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html" class="active">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="resume-header">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+        <div>
+          <h1>Karthikeyan Sivaraman</h1>
+          <div class="lead" style="margin-bottom: 0.5rem;">
+            Data &amp; Analytics Lead &bull; Data Engineering &amp; ML/AI Engineering
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-contacts">
+        <div><strong>Email:</strong> <a href="mailto:karthikeyan_s2008@yahoo.com">karthikeyan_s2008@yahoo.com</a></div>
+        <div><strong>Location:</strong> Charlotte, NC</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sivaramankarthik/" target="_blank" rel="noopener">linkedin.com/in/sivaramankarthik</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/KarthikeyanSivaraman" target="_blank" rel="noopener">github.com/KarthikeyanSivaraman</a></div>
+        <div><strong>YouTube:</strong> <a href="https://www.youtube.com/@AIDataSimplified-KS" target="_blank" rel="noopener">youtube.com/@AIDataSimplified-KS</a></div>
+      </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <section class="resume-section">
+      <h2>Executive Summary</h2>
+      <p>
+        Data professional with 15 years of experience in data modelling, analysis, visualization and data engineering, all at Honeywell since 2013. I currently build data flows in the enterprise data warehouse on Snowflake and Databricks, including AI agents in Snowflake. Before that I led HR analytics as a Data Analytics Manager, delivering executive Tableau and Power BI dashboards. I hold a B.Sc in Mathematics and completed the Master Program in Applied AI, Gen AI &amp; Data Science (Hope AI); this portfolio is where I build those models from scratch, with every result measured.
+      </p>
+    </section>
+
+    <!-- Technical Skills Split -->
+    <section class="resume-section">
+      <h2>Technical Skills &amp; Competencies</h2>
+
+      <!-- Subsection 1: Shown in shipped work -->
+      <h3>Shown in Shipped Work</h3>
+      <p style="color: var(--text-muted); font-size: 0.92rem;">
+        Skills verified by completed code repositories, live evaluations, benchmarks, and published demonstrations in this portfolio:
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h4 class="card-title" style="font-size: 1.05rem;">Data Platforms &amp; Modeling</h4>
+          <p class="card-body">
+            SQL, Snowflake (Stages, Warehouses, Tasks, Snowpipe, Account Usage), Snowpark/Cortex, Power BI Desktop (PBIP and PBIR formats), TMDL (Tabular Model Definition Language), DAX, Star-Schema Dimensional Modeling.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title" style="font-size: 1.05rem;">Software &amp; Web Engineering</h4>
+          <p class="card-body">
+            Python 3.10+, pandas, Pydantic, Streamlit, FastAPI, openpyxl, PyYAML, pytest, Model Context Protocol (MCP), REST API integration.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title" style="font-size: 1.05rem;">GenAI &amp; Retrieval Systems</h4>
+          <p class="card-body">
+            Google Gemini Developer API (<code>gemini-embedding-001</code>, <code>gemini-flash-lite-latest</code>), Dense Embeddings Retrieval, Vector Search, Chroma, RAG Evaluation (hit@3, strict string-match fact recall), Prompt Injection Defense, Human-in-the-Loop review workflows.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title" style="font-size: 1.05rem;">Data Quality &amp; FinOps</h4>
+          <p class="card-body">
+            Data Quality Reconciliation Pipelines, Data Contracts &amp; Schema Validation, SHA-256 Release Packaging, Cloud FinOps, Snowflake Credit Leak Detection, Consumption Analytics.
+          </p>
+        </div>
+      </div>
+
+      <!-- Subsection 2: Learning in public -->
+      <h3 style="margin-top: 1.75rem;">Learning in Public (Planned Modules)</h3>
+      <p style="color: var(--text-muted); font-size: 0.92rem;">
+        Technologies actively under development or roadmapped in the Flagship A predictive maintenance platform, mapped to their specific module targets:
+      </p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 32%;">Skill / Tool</th>
+              <th style="width: 48%;">Application in Flagship A</th>
+              <th style="width: 20%;">Module Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>PySpark &amp; Spark Structured Streaming</strong></td>
+              <td>Streaming sensor ingestion, medallion architecture (bronze/silver/gold), rolling-window degradation features. Local transforms &amp; 16 tests done; Databricks run pending.</td>
+              <td><span class="badge badge-progress">Module A1 (In Progress)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Spark MLlib, scikit-learn, XGBoost</strong></td>
+              <td>RUL regression, failure classification, and operating-regime clustering benchmarked against MLflow tracking.</td>
+              <td><span class="badge badge-planned">Module A2</span></td>
+            </tr>
+            <tr>
+              <td><strong>PyTorch DDP (DistributedDataParallel)</strong></td>
+              <td>Multi-GPU distributed training of LSTM and Transformer sequence models on sensor windows (2x T4 GPUs).</td>
+              <td><span class="badge badge-planned">Module A3</span></td>
+            </tr>
+            <tr>
+              <td><strong>Optuna / Ray Tune</strong></td>
+              <td>Automated hyperparameter optimization sweeps with early stopping and cost tracking.</td>
+              <td><span class="badge badge-planned">Module A3</span></td>
+            </tr>
+            <tr>
+              <td><strong>ONNX Runtime &amp; Quantization</strong></td>
+              <td>ONNX graph export and dynamic INT8 quantization for low-latency CPU model inference.</td>
+              <td><span class="badge badge-planned">Module A4</span></td>
+            </tr>
+            <tr>
+              <td><strong>Docker &amp; Kubernetes (kind)</strong></td>
+              <td>FastAPI model containerization and local Kubernetes cluster deployment with horizontal autoscaling.</td>
+              <td><span class="badge badge-planned">Module A4</span></td>
+            </tr>
+            <tr>
+              <td><strong>LoRA / QLoRA &amp; Hugging Face</strong></td>
+              <td>Parameter-efficient fine-tuning of open 1&ndash;3B LLMs on synthetic maintenance notes for structured fault extraction.</td>
+              <td><span class="badge badge-planned">Module A5</span></td>
+            </tr>
+            <tr>
+              <td><strong>vLLM &amp; llama.cpp</strong></td>
+              <td>High-throughput local LLM inference serving measuring tokens/sec and cost per request.</td>
+              <td><span class="badge badge-planned">Module A5</span></td>
+            </tr>
+            <tr>
+              <td><strong>LangGraph &amp; pgvector</strong></td>
+              <td>Maintenance-assistant agent with RAG over equipment manuals and human approval gates.</td>
+              <td><span class="badge badge-planned">Module A6</span></td>
+            </tr>
+            <tr>
+              <td><strong>Azure ML, CI/CD &amp; Evidently</strong></td>
+              <td>Cloud model registration, GitHub Actions CI/CD deployment, data/prediction drift monitoring, and automated rollback.</td>
+              <td><span class="badge badge-planned">Module A7</span></td>
+            </tr>
+            <tr>
+              <td><strong>Apache Iceberg &amp; Microsoft Fabric (OneLake)</strong></td>
+              <td>Cross-platform gold table sharing and Direct Lake Power BI performance comparison.</td>
+              <td><span class="badge badge-planned">Module A8</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="resume-section">
+      <h2>Professional Experience</h2>
+
+      <article class="job-item">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Advanced Data Engineer</h3>
+            <div class="job-company">Honeywell</div>
+          </div>
+          <div class="job-dates">Mar 2022 &ndash; Present</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Data transformation and data flows in the Enterprise Data Warehouse (EDW) team, serving HR, Contracts, Time and Attendance, GPMO, Engineering, ISC, SAP and Finance.</li>
+          <li>Builds on Snowflake and Databricks, including AI agents in Snowflake; Python, R, SQL Server and Oracle for data management.</li>
+          <li>Applies statistical methods and machine learning (linear and logistic regression, decision trees) to business problems.</li>
+          <li>Power BI and Tableau visualizations for technical and business audiences.</li>
+        </ul>
+      </article>
+
+      <article class="job-item">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Data Analytics Manager, HR Analytics</h3>
+            <div class="job-company">Honeywell</div>
+          </div>
+          <div class="job-dates">Oct 2019 &ndash; Mar 2022</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Built and ran the analytics program for Talent, Diversity &amp; Inclusion, Learning and Workforce Strategy.</li>
+          <li>Delivered Tableau dashboards: Talent Behaviour Index, People Leader Index, Talent Acquisition, Census and Diversity of Slate; DOMO dashboards with automated ETL for the Learning COE.</li>
+          <li>Simplified quarterly diversity reporting, improving accuracy and freeing time for analysis and executive recommendations.</li>
+          <li>Built an in-house tool matching mentors with high-potential mentees; wrote the analytics roadmap toward self-service and advanced analytics.</li>
+        </ul>
+      </article>
+
+      <article class="job-item">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Senior Data Analyst (SME)</h3>
+            <div class="job-company">Honeywell</div>
+          </div>
+          <div class="job-dates">Jul 2016 &ndash; Oct 2019</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Advanced SQL in PeopleSoft Query Manager; requirements with HR and non-HR customers at all levels.</li>
+          <li>Operational support to Tier 3 analytics leaders; PeopleSoft and OBIEE user support and training; daily team metrics (OTTR, C-Sat, accuracy).</li>
+        </ul>
+      </article>
+
+      <article class="job-item">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Data Analyst</h3>
+            <div class="job-company">Honeywell</div>
+          </div>
+          <div class="job-dates">Dec 2013 &ndash; Jun 2016</div>
+        </div>
+        <ul class="bullet-list">
+          <li>PeopleSoft and Taleo BO reporting: payroll, audit, goals and quality-of-hire reports; report quality and timeliness checks.</li>
+        </ul>
+      </article>
+
+      <article class="job-item">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Resource Manager, ITO</h3>
+            <div class="job-company">Hewlett Packard &bull; Bangalore, India</div>
+          </div>
+          <div class="job-dates">Oct 2008 &ndash; Dec 2013</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Workforce deployment against regional demand, attrition backfill tracking, PeopleSoft and Taleo reporting, and workforce analytics (WFA) reports.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2>Education</h2>
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">B.Sc, Mathematics</h3>
+            <div class="job-company">Pachaiyappa's College &bull; Chennai, India</div>
+          </div>
+        </div>
+        <p style="margin: 0.25rem 0 0 0; color: var(--text-muted); font-size: 0.9rem;">
+          Master Program in Applied AI, Gen AI &amp; Data Science (Hope AI): machine learning, NLP and deep learning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="resume-section">
+      <h2>Professional Certifications</h2>
+      <ul class="bullet-list">
+        <li>Snowflake SnowPro Core Certification</li>
+      </ul>
+    </section>
+
+    <!-- Publications, Talks & Open Source -->
+    <section class="resume-section">
+      <h2>Public Evidence &amp; Open Source</h2>
+      <ul class="bullet-list">
+        <li>
+          <strong>AI Data Simplified (YouTube Channel):</strong> Host of technical educational channel covering Snowflake, RAG failure modes, and AI agents.
+        </li>
+        <li>
+          <strong>Snowflake Credit Leak Checker:</strong> Creator of open-source read-only SQL diagnostic script for Snowflake cost governance (<a href="https://github.com/KarthikeyanSivaraman/snowflake-credit-leak-checker" target="_blank" rel="noopener">GitHub</a>).
+        </li>
+        <li>
+          <strong>RAG Showdown:</strong> Author of reproducible analytical benchmark demonstrating vector search failure modes on counting queries (<a href="https://github.com/KarthikeyanSivaraman/rag-showdown" target="_blank" rel="noopener">GitHub</a>).
+        </li>
+        <li>
+          <strong>Dataset QA Framework:</strong> Reproducible field-inspection data validation, schema enforcement, and SHA-256 release packaging pipeline.
+        </li>
+        <li>
+          <strong>Support Desk AI:</strong> Customer support-desk assistant drafting cited replies with Gemini embeddings, Gemini Flash-Lite, and strict human approval controls.
+        </li>
+        <li>
+          <strong>Power BI Makeover: Tidewell Coffee Co. (Fictional):</strong> Demonstration rebuilding a cluttered Power BI report from raw CSVs into an on-brand executive dashboard using PBIR + TMDL file-based project definitions.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Navigation -->
+    <section style="margin-top: 2rem;" class="no-print">
+      <div class="callout">
+        <h4>Portfolio Links</h4>
+        <p>
+          View live implementation artifacts in <a href="projects.html">Shipped Projects</a>, examine the <a href="flagship-a.html">Predictive Maintenance Architecture</a>, or review the <a href="skills.html">Skills &rarr; Evidence</a> page.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>Karthikeyan Sivaraman &bull; Data Engineering, Analytics, ML and AI Engineering</div>
+      <div>Static portfolio &bull; No trackers &bull; No external scripts &bull; Source-verified claims only</div>
+    </div>
+  </footer>
+</body>
+</html>

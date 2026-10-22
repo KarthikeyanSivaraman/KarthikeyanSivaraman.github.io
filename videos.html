@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos &amp; Talks &mdash; AI Data Simplified &mdash; Karthikeyan Sivaraman</title>
+  <meta name="description" content="Technical videos and demonstrations from the AI Data Simplified channel covering Snowflake, RAG architectures, and AI engineering.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Karthikeyan Sivaraman</a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html">Overview</a>
+        <a href="flagship-a.html">Flagship A (Predictive Maintenance)</a>
+        <a href="projects.html">Projects</a>
+        <a href="videos.html" class="active">Videos</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem;">
+        <h1>AI Data Simplified &mdash; Technical Video Library</h1>
+        <span class="badge badge-done">Live Channel</span>
+      </div>
+      <p class="lead">
+        Practical Snowflake, data engineering, and AI systems tutorials built around reproducible demos, real failure analyses, and honest benchmarks.
+      </p>
+
+      <div class="callout">
+        <h4>About the Channel</h4>
+        <p>
+          <strong>AI Data Simplified</strong> is an independent engineering channel hosted by Karthikeyan Sivaraman. The channel rejects synthetic hype: every tutorial is built on accessible free tiers or trial credits, explains what breaks when validation passes, and provides full source code.
+        </p>
+        <p style="margin-bottom: 0;">
+          <strong>Channel URL:</strong> <a href="https://www.youtube.com/@AIDataSimplified-KS" target="_blank" rel="noopener">youtube.com/@AIDataSimplified-KS</a>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Video Catalogue &amp; Production Status</h2>
+      <p>
+        Titles, publication dates, and links verified against repository production logs (<code>content/youtube/published-log.csv</code>).
+      </p>
+
+      <div class="grid">
+        <!-- Video 1 -->
+        <article class="card" id="video-cortex-mcp">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">Stop Writing Python MCP Servers for Snowflake &mdash; Do This Instead</h3>
+            <span class="badge badge-done">Published</span>
+          </div>
+          <div class="card-meta">
+            <strong>Published:</strong> September 23, 2026 &bull; <strong>Format:</strong> Video
+          </div>
+          <div class="tag-list">
+            <span class="tag">Snowflake</span>
+            <span class="tag">MCP Server</span>
+            <span class="tag">Cortex Agents</span>
+            <span class="tag">Claude Desktop</span>
+            <span class="tag">SQL</span>
+          </div>
+          <p class="card-body">
+            Demonstrates how to connect Claude Desktop to Snowflake warehouse data using native SQL objects (<code>CREATE AGENT</code> and <code>CREATE MCP SERVER</code>) shipped in August 2026. Eliminates hand-rolled Python middleware, Flask/FastAPI servers, and bespoke protocol shims while establishing governance through semantic views.
+          </p>
+          <div class="card-meta">
+            <strong>Verified Source:</strong> <code>content/youtube/production/2026-08-17-cortex-agents-mcp-server-youtube-metadata.md</code>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.youtube.com/watch?v=6VcpAV6PUV8" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Video 2 -->
+        <article class="card" id="video-rag-showdown">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">Your RAG Pipeline Isn't Hallucinating. It's Blind. (RAG Showdown)</h3>
+            <span class="badge badge-done">Published</span>
+          </div>
+          <div class="card-meta">
+            <strong>Published:</strong> October 5, 2026 &bull; <strong>Format:</strong> Video (4:27)
+          </div>
+          <div class="tag-list">
+            <span class="tag">RAG</span>
+            <span class="tag">Vector Search</span>
+            <span class="tag">Chroma</span>
+            <span class="tag">Sentence-Transformers</span>
+            <span class="tag">Failure Analysis</span>
+          </div>
+          <p class="card-body">
+            A real pipeline test demonstrating top-k retrieval limitations on counting and aggregation questions (retrieving 5 of 7 real matches on 29 tickets). Reproduces Snowflake's 5.6% analytical search benchmark on a reproducible corpus.
+          </p>
+          <div class="card-meta">
+            <strong>Verified Source:</strong> <code>content/youtube/production/2026-09-26-rag-showdown-youtube-metadata.md</code>
+          </div>
+          <div class="card-footer">
+            <a href="https://youtu.be/-TrC-v8EK9w" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Video 3 -->
+        <article class="card" id="video-trial-survival">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">Everything Works on a Snowflake Free Trial Except the AI (I Tested 16 Things)</h3>
+            <span class="badge badge-progress">Scheduled Oct 20</span>
+          </div>
+          <div class="card-meta">
+            <strong>Scheduled:</strong> October 20, 2026 &bull; <strong>Format:</strong> Video (5:36)
+          </div>
+          <div class="tag-list">
+            <span class="tag">Snowflake</span>
+            <span class="tag">Free Trial</span>
+            <span class="tag">Cortex AI</span>
+            <span class="tag">Snowpipe</span>
+            <span class="tag">Notebooks</span>
+          </div>
+          <p class="card-body">
+            Ran 16 tests across a fresh Snowflake free trial account without a payment card. 15 core features worked (warehouses, stages, COPY INTO, Notebooks, Streamlit, Tasks, Snowpipe, Time Travel, sharing). Cortex AI functions returned error 399258 ('not available for trial accounts') until a payment method was added.
+          </p>
+          <div class="card-meta">
+            <strong>Verified Source:</strong> <code>content/youtube/production/2026-10-20-snowflake-trial-survival-guide-youtube-metadata.md</code>
+          </div>
+          <div class="card-footer">
+            <a href="https://youtu.be/TcqMWg-vQh0" target="_blank" rel="noopener">Preview Scheduled Video &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Video 4 -->
+        <article class="card" id="video-credit-leak">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">I Built a Snowflake Credit Leak Checker. The First Leak It Found Was Mine.</h3>
+            <span class="badge badge-progress">Scheduled Oct 27</span>
+          </div>
+          <div class="card-meta">
+            <strong>Scheduled:</strong> October 27, 2026 &bull; <strong>Format:</strong> Video (6:02)
+          </div>
+          <div class="tag-list">
+            <span class="tag">Snowflake</span>
+            <span class="tag">Cost Optimization</span>
+            <span class="tag">Container Services</span>
+            <span class="tag">Open Source</span>
+          </div>
+          <p class="card-body">
+            Details the discovery of an unexpected credit leak where 79% of credits (6.92 of 8.73 over 30 days) were consumed by forgotten background container services behind an idle Notebook and a Streamlit app. Introduces a free read-only SQL audit tool.
+          </p>
+          <div class="card-meta">
+            <strong>Verified Source:</strong> <code>content/youtube/production/2026-10-27-credit-leak-checker-youtube-metadata.md</code>
+          </div>
+          <div class="card-footer">
+            <a href="https://youtu.be/1OXiVuE9sIw" target="_blank" rel="noopener">Preview Scheduled Video &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Video 5 -->
+        <article class="card" id="video-cortex-code-pbi">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">Snowflake's AI Built My Power BI Dashboard (No Copilot No Excel)</h3>
+            <span class="badge badge-planned">Coming Nov 10</span>
+          </div>
+          <div class="card-meta">
+            <strong>Release Date:</strong> Coming Nov 10, 2026 &bull; <strong>Status:</strong> Script approved &amp; recorded
+          </div>
+          <div class="tag-list">
+            <span class="tag">Snowflake</span>
+            <span class="tag">Cortex Code</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">TMDL</span>
+            <span class="tag">DAX</span>
+          </div>
+          <p class="card-body">
+            A comprehensive tutorial on using Snowflake Cortex Code to autonomously generate a star-schema semantic model, DAX measures, and 8 Power BI report visuals straight from warehouse tables. Covers the two silent validation-passing failures caught during recording and reconciles metrics against raw SQL.
+          </p>
+          <div class="card-meta">
+            <strong>Verified Source:</strong> <code>content/youtube/scripts/2026-11-10-cortex-code-power-bi.md</code>
+          </div>
+          <div class="card-footer">
+            <span class="badge badge-planned">Coming Nov 10 &bull; No public link yet</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Additional Planned Topics Note -->
+    <section>
+      <h2>Channel Content Pipeline</h2>
+      <p>
+        Future episodes in the production pipeline include <em>Snowflake in 10 Minutes on a Free Trial</em> and <em>DuckDB vs Snowflake: Does DuckDB Really Kill Your Bill?</em>. Per the channel's ground-truth policy, benchmark figures remain unstated until measurements run on live accounts.
+      </p>
+    </section>
+
+    <!-- Navigation -->
+    <section style="margin-top: 2rem;">
+      <div class="callout">
+        <h4>Navigation</h4>
+        <p>Explore full code repositories in <a href="projects.html">Shipped Projects</a>, or return to the <a href="index.html">Overview</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>Karthikeyan Sivaraman &bull; Data Engineering, Analytics, ML and AI Engineering</div>
+      <div>Static portfolio &bull; No trackers &bull; No external scripts &bull; Source-verified claims only</div>
+    </div>
+  </footer>
+</body>
+</html>

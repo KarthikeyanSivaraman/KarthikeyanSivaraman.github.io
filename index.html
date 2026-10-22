@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karthikeyan Sivaraman &mdash; Data &amp; ML/AI Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Karthikeyan Sivaraman: Data engineering, analytics, ML and AI engineering, with verifiable, benchmarked implementations.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Karthikeyan Sivaraman</a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="active">Overview</a>
+        <a href="flagship-a.html">Flagship A (Predictive Maintenance)</a>
+        <a href="projects.html">Projects</a>
+        <a href="videos.html">Videos</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero & 30-Second Summary -->
+    <section>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+          <h1>Karthikeyan Sivaraman</h1>
+          <div class="lead" style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">
+            Data Engineering &bull; Analytics &amp; BI &bull; ML / AI Engineering
+          </div>
+          <p style="color: var(--text-muted); max-width: 780px;">
+            Moving 15 years of data analytics, BI and data engineering (Snowflake, Databricks, Tableau, Power BI) into hands-on data engineering, distributed machine learning, and production GenAI systems.
+          </p>
+        </div>
+      </div>
+
+        <div class="callout">
+        <h4>30-Second Summary</h4>
+        <p>
+          My strength is data. Over 15 years I have built enterprise dashboards in Tableau and Power BI, data models in the enterprise data warehouse, and now Snowflake and Databricks pipelines and AI agents in Snowflake. With that base, data engineering and AI semantic views come naturally.
+          I studied applied data science (ML, NLP, deep learning) and come from a maths background. This portfolio is where I build those models from scratch, and every result here is measured and sourced.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; font-size: 0.92rem; margin-top: 0.75rem;">
+          <div><strong>GitHub:</strong> <a href="https://github.com/KarthikeyanSivaraman" target="_blank" rel="noopener">github.com/KarthikeyanSivaraman</a></div>
+          <div><strong>YouTube:</strong> <a href="videos.html">AI Data Simplified</a></div>
+          <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sivaramankarthik/" target="_blank" rel="noopener">linkedin.com/in/sivaramankarthik</a></div>
+          <div><strong>Email:</strong> <a href="mailto:karthikeyan_s2008@yahoo.com">karthikeyan_s2008@yahoo.com</a></div>
+          <div><strong>Location:</strong> Charlotte, NC</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Featured Pieces -->
+    <section>
+      <h2>Featured Implementations</h2>
+      <p>Three core systems built to prove architecture, empirical measurement, and failure analysis.</p>
+
+      <div class="grid">
+        <!-- Feature 1: Flagship A -->
+        <article class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">IT/OT Predictive Maintenance Platform</h3>
+            <span class="badge badge-progress">Active Flagship</span>
+          </div>
+          <div class="tag-list">
+            <span class="tag">NASA C-MAPSS</span>
+            <span class="tag">Data Pack Shipped</span>
+            <span class="tag">Spark Streaming (A1)</span>
+            <span class="tag">Delta Lake</span>
+          </div>
+          <p class="card-body">
+            An end-to-end industrial IoT system built on NASA C-MAPSS run-to-failure sensor data. Spans Databricks Spark Structured Streaming, distributed PyTorch sequence modeling, ONNX/quantized low-latency serving, and a LangGraph maintenance agent with human-in-the-loop work order routing.
+          </p>
+          <div class="card-meta">
+            <strong>Current Milestone:</strong> Data pack shipped (2,000 synthetic logs, 0% overlap); Module A1 lakehouse ingestion in progress (code and 16 local tests done, Databricks run pending).
+          </div>
+          <div class="card-footer">
+            <a href="flagship-a.html">Explore Architecture &amp; Data Card &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Feature 2: Support Desk AI -->
+        <article class="card">
+          <img src="assets/support-desk-ai.png" alt="Support Desk AI: a tenant ticket, the AI draft citing the deposit policy, and the approve step" style="max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.75rem; border: 1px solid var(--border-color); display: block;" width="1280" height="720">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">Support Desk AI</h3>
+            <span class="badge badge-done">Live Eval Done</span>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Gemini API</span>
+            <span class="tag">Embeddings Retrieval</span>
+            <span class="tag">Flash-Lite</span>
+            <span class="tag">Human Approval Gate</span>
+            <span class="tag">Injection Defense</span>
+          </div>
+          <p class="card-body">
+            A support-desk assistant that drafts cited replies for a person to approve (nothing is sent without approval). Uses Gemini embeddings only (<code>gemini-embedding-001</code>) after hybrid keyword + embeddings was tested and scored lower on this data. Drafts generated with Gemini Flash-Lite on the free tier.
+          </p>
+          <div class="card-meta">
+            <strong>Held-Out Test (40 tickets):</strong> Right article 30/30; required facts 88/94; unanswerable routed 9/10; answerable wrongly routed 1/30; injection marker absent 3/3. Decision requests routed to a person: 6/6 (dev set). Demo replays 9 example tickets.
+          </div>
+          <div class="card-footer">
+            <a href="projects.html#support-desk-ai">View Project Specs &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Feature 3: Cortex Code + Power BI -->
+        <article class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">Cortex Code + Power BI Build</h3>
+            <span class="badge badge-done">Shipped Demo</span>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Snowflake</span>
+            <span class="tag">Cortex Code</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">TMDL</span>
+            <span class="tag">DAX</span>
+          </div>
+          <p class="card-body">
+            Demonstrates Snowflake's Cortex Code autonomous agent reading warehouse tables, creating star-schema views across 2,406 days, and generating 8 report visuals without Fabric capacity. Catches two silent validation-passing errors and reconciles $226.83bn revenue against raw SQL.
+          </p>
+          <div class="card-meta">
+            <strong>Evidence:</strong> Recorded execution; verified numbers in <code>content/youtube/scripts/2026-11-10-cortex-code-power-bi.md</code>.
+          </div>
+          <div class="card-footer">
+            <a href="projects.html#cortex-code-power-bi">Review Case Study &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Feature 4: Power BI Makeover -->
+        <article class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <h3 class="card-title" style="margin: 0;">Power BI Makeover: Tidewell Coffee Co.</h3>
+            <span class="badge badge-done">Shipped Demo</span>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Power BI</span>
+            <span class="tag">PBIR</span>
+            <span class="tag">TMDL</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Data Modeling</span>
+          </div>
+          <p class="card-body">
+            Before-and-after demonstration turning a cluttered Power BI report into an on-brand executive dashboard from raw CSVs using file-based project definitions (PBIR + TMDL) generated by <code>build.py</code> and checked in Power BI Desktop. Features a brand theme, designed canvas background, 4 KPI cards on a 16px grid, dynamic insight subtitles, and real measures. Fictional company and data.
+          </p>
+          <div class="card-meta">
+            <strong>Evidence:</strong> Generated PBIP projects; verified in <code>portfolio/pbi-makeover-demo/README.md</code>.
+          </div>
+          <div class="card-footer">
+            <a href="projects.html#pbi-makeover">Review Before / After Makeover &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -> Evidence by track (generated by build_skills.py from tracks.json) -->
+    <section>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem;">
+        <h2>Skills &rarr; Evidence</h2>
+        <a href="skills.html" style="font-size: 0.95rem; font-weight: 600;">See every skill and its proof &rarr;</a>
+      </div>
+      <p>Built for data engineering, analytics, ML and AI engineering roles. Every claim maps to code or a measured result; planned work is labelled as planned.</p>
+      <div class="grid">
+        <!-- TRACKS:START -->
+        <article class="card">
+          <h3 class="card-title"><a href="skills.html#data-engineering">Data Engineering</a></h3>
+          <div><span class="badge badge-done">3 shipped</span> <span class="badge badge-progress">1 in progress</span> <span class="badge badge-planned">1 planned</span></div>
+          <ul class="card-body" style="margin-top: 0.75rem;"><li>Batch and streaming pipelines (PySpark, Delta medallion)</li><li>Dataset design and synthetic data with clean evaluation splits</li><li>Snowflake platform and cost governance</li><li>Data quality, contracts and automated checks</li><li>Lakehouse platforms compared (Snowflake, Databricks, Fabric)</li></ul>
+        </article>
+        <article class="card">
+          <h3 class="card-title"><a href="skills.html#analytics-bi">Analytics &amp; BI</a></h3>
+          <div><span class="badge badge-done">3 shipped</span></div>
+          <ul class="card-body" style="margin-top: 0.75rem;"><li>Power BI modelling and report design (DAX, TMDL, PBIR)</li><li>Reconciling reported numbers against the source</li><li>Cost and usage analytics</li></ul>
+        </article>
+        <article class="card">
+          <h3 class="card-title"><a href="skills.html#ml-engineering">ML Engineering</a></h3>
+          <div><span class="badge badge-planned">4 planned</span></div>
+          <ul class="card-body" style="margin-top: 0.75rem;"><li>Classical ML with experiment tracking (scikit-learn, XGBoost, MLflow)</li><li>Deep learning, distributed training and HPO (PyTorch DDP, Optuna)</li><li>Model serving and latency (FastAPI, ONNX, quantization)</li><li>Deployment, CI/CD and monitoring (Azure ML, GitHub Actions)</li></ul>
+        </article>
+        <article class="card">
+          <h3 class="card-title"><a href="skills.html#ai-llm-engineering">AI / LLM Engineering</a></h3>
+          <div><span class="badge badge-done">3 shipped</span> <span class="badge badge-planned">1 planned</span></div>
+          <ul class="card-body" style="margin-top: 0.75rem;"><li>RAG and retrieval, with evaluation</li><li>Agents and tool use (Cortex Agents, MCP)</li><li>Human approval and prompt-injection defence</li><li>LLM fine-tuning and serving (LoRA, vLLM)</li></ul>
+        </article>
+        <article class="card">
+          <h3 class="card-title"><a href="skills.html#leadership">Leadership &amp; Communication</a></h3>
+          <div><span class="badge badge-done">1 shipped</span> <span class="badge badge-planned">1 planned</span></div>
+          <ul class="card-body" style="margin-top: 0.75rem;"><li>Technical teaching (YouTube channel)</li><li>Architecture decisions, onboarding and cost/benefit memos</li></ul>
+        </article>
+        <!-- TRACKS:END -->
+      </div>
+    </section>
+
+    <!-- Navigation Prompt -->
+    <section style="margin-top: 2rem;">
+      <div class="callout">
+        <h4>Detailed Review</h4>
+        <p>
+          Dive into the complete <a href="flagship-a.html">IT/OT Predictive Maintenance Platform</a> design, read the benchmark reports in <a href="projects.html">Shipped Projects</a>, or see every skill mapped to its proof on the <a href="skills.html">Skills page</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>Karthikeyan Sivaraman &bull; Data Engineering, Analytics, ML and AI Engineering</div>
+      <div>Static portfolio &bull; No trackers &bull; No external scripts &bull; Source-verified claims only</div>
+    </div>
+  </footer>
+</body>
+</html>

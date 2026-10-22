@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipped Projects &mdash; Karthikeyan Sivaraman</title>
+  <meta name="description" content="Verified data and ML/AI engineering projects with measured benchmarks, real failure analyses, and source-checked citations.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Karthikeyan Sivaraman</a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html">Overview</a>
+        <a href="flagship-a.html">Flagship A (Predictive Maintenance)</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="videos.html">Videos</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h1>Shipped Projects &amp; Implementations</h1>
+      <p class="lead">
+        Five production-style systems demonstrating data platform engineering, retrieval systems, LLM agents, and cost governance. Every claim is tied to an existing repository file and real measured results.
+      </p>
+      
+      <div class="callout">
+        <h4>Ground Truth Policy</h4>
+        <p>
+          No vanity metrics or invented numbers. Shipped numbers originate from verified execution logs, recorded sessions, and audit manifests.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project 1: Support Desk AI -->
+    <article class="card" id="support-desk-ai" style="margin-bottom: 2rem;">
+      <figure style="margin: 0 0 1.25rem 0;">
+        <img src="assets/support-desk-ai.png" alt="Support Desk AI: a tenant ticket, the AI draft citing the deposit policy, and the approve step" style="max-width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border-color); display: block;" width="1280" height="720">
+      </figure>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h2 class="card-title" style="margin: 0; border: none; padding: 0;">1. Support Desk AI</h2>
+        <span class="badge badge-done">Done &bull; Live Eval</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">GenAI</span>
+        <span class="tag">Embeddings Retrieval</span>
+        <span class="tag">Gemini API (Free Tier)</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Pydantic</span>
+        <span class="tag">Human-in-the-Loop</span>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <h3>What It Is</h3>
+        <p>
+          A support-desk assistant that drafts cited replies for a person to approve (nothing is sent without approval). Built for property management tickets, the pipeline retrieves synthetic policies, drafts answers citing specific sections, and routes unanswerable queries or prompt injections to a person.
+        </p>
+        <p>
+          <strong>Retrieval architecture:</strong> Embeddings only (<code>gemini-embedding-001</code>). Hybrid keyword + embeddings was tested on dev (both score blending and reciprocal rank fusion) and scored lower on this data because colloquial tenant phrasings had weak keyword overlap with formal policy texts. Hybrid retrieval added noise, so it was not shipped.
+        </p>
+        <p>
+          <strong>Generation:</strong> Gemini Flash-Lite (<code>gemini-flash-lite-latest</code>) on Google AI Studio's free tier.
+        </p>
+
+        <h3>What Was Measured</h3>
+        <p>
+          Measured on a held-out test split of 40 hand-written synthetic tickets (30 answerable, 10 unanswerable including 3 embedded injection attempts), run once after settings were frozen on dev (<code>EXPERIMENTS.md</code> Section E3, <code>eval_summary.json</code>):
+        </p>
+        <ul>
+          <li><strong>Right article in top 3:</strong> <strong>30/30 (100%)</strong></li>
+          <li><strong>Required facts in the answer:</strong> <strong>88/94</strong> (strict string match)</li>
+          <li><strong>Unanswerable routed to a person:</strong> <strong>9/10</strong></li>
+          <li><strong>Answerable wrongly routed:</strong> <strong>1/30</strong></li>
+          <li><strong>Injection marker absent:</strong> <strong>3/3 (100%)</strong></li>
+          <li><strong>Drafts failed validation:</strong> <strong>1/40</strong> (safely routed to a person)</li>
+        </ul>
+        <div class="callout" style="font-size: 0.9rem;">
+          <strong>The honest miss &amp; targeted fix:</strong> In ticket T39, a tenant requested a late fee waiver. The initial draft quoted the late-fee policy instead of routing the request to a person for exception handling. The prompt was revised so requests for a decision (waive a fee, refund a deduction, make an exception) now go to a person: 6 of 6 on the dev set; a fresh held-out test is pending.
+        </div>
+
+        <h3>Tech Stack</h3>
+        <p>
+          Python 3.11+, Streamlit, Google Gemini Developer API (<code>gemini-flash-lite-latest</code>, <code>gemini-embedding-001</code>), Pydantic schema validation, pytest. The offline demo replays real Gemini output recorded for 9 example tickets.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          <strong>Verified Source:</strong> <code>ai-automation/apps/support-desk-ai/EXPERIMENTS.md</code> (sections E1-E3, E4 revision 2), <code>eval_summary.json</code>, <code>data/cache/recorded_inbox.json</code>, and <code>README.md</code>
+        </div>
+        <div>
+          <strong>Workspace:</strong> <code>ai-automation/apps/support-desk-ai/</code>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2: Cortex Code + Power BI -->
+    <article class="card" id="cortex-code-power-bi" style="margin-bottom: 2rem;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h2 class="card-title" style="margin: 0; border: none; padding: 0;">2. Snowflake Cortex Code + Power BI Build</h2>
+        <span class="badge badge-done">Shipped Demo &bull; Coming Nov 10</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Snowflake</span>
+        <span class="tag">Cortex Code (CoCo)</span>
+        <span class="tag">Power BI Desktop</span>
+        <span class="tag">TMDL</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Data Modeling</span>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <h3>What It Is</h3>
+        <p>
+          An end-to-end pipeline using Snowflake Cortex Code to inspect enterprise warehouse data, create star-schema views, write TMDL semantic models and DAX measures, and author 8 Power BI report visuals straight from SQL tables&mdash;without requiring Microsoft Fabric capacity or Power BI Copilot.
+        </p>
+
+        <h3>What Was Measured</h3>
+        <p>
+          Measured during recorded execution on TPC-H SF1 tables (take 2 + pickup recording):
+        </p>
+        <ul>
+          <li><strong>Star-schema generation:</strong> Star schema created across <code>FACT_ORDERS</code>, <code>DIM_CUSTOMER</code>, and <code>DIM_DATE</code> (2,406 days matching order span).</li>
+          <li><strong>Autonomous visual generation:</strong> 8 report visuals generated; automated validator reported 0 errors.</li>
+          <li><strong>Real failure analysis:</strong> Human review caught two critical validation-passing bugs: (1) TMDL line-break syntax break in take 1 that broke all visuals, and (2) Top 10 customer table rendering empty in take 2 because the TopN subquery omitted <code>FACT_ORDERS</code> table context.</li>
+          <li><strong>SQL reconciliation:</strong> SQL total revenue of <strong>$226,829,306,447.46</strong> reconciled exactly with the Power BI card ($226.83bn); 1,500,000 orders matched (card "2M" verified as display rounding); AOV $151,219.54 matched $151.22K; Europe SQL revenue ($45,793,265,459.71, 20.2%) reconciled with cross-filtered card ($45.79bn).</li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <p>
+          Snowflake, Cortex Code CLI, Power BI Desktop (PBIP format), TMDL (Tabular Model Definition Language), DAX, SQL.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          <strong>Verified Source:</strong> <code>content/youtube/scripts/2026-11-10-cortex-code-power-bi.md</code>
+        </div>
+        <div>
+          <span class="badge badge-planned">Video coming Nov 10 (No public link yet)</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3: RAG Showdown -->
+    <article class="card" id="rag-showdown" style="margin-bottom: 2rem;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h2 class="card-title" style="margin: 0; border: none; padding: 0;">3. RAG Showdown: Vector Search Blind Spot</h2>
+        <span class="badge badge-done">Shipped &bull; Public Repo &amp; Video</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">RAG</span>
+        <span class="tag">Vector Search</span>
+        <span class="tag">ChromaDB</span>
+        <span class="tag">sentence-transformers</span>
+        <span class="tag">Claude Code CLI</span>
+        <span class="tag">FastAPI + React</span>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <h3>What It Is</h3>
+        <p>
+          A controlled, reproducible investigation into top-k vector retrieval limitations on analytical counting queries ("Your RAG pipeline isn't hallucinating. It's blind."). Evaluated over 29 synthetic support tickets for a fictional subscription-box company, testing whether top-k retrieval can correctly answer: <em>"How many tickets mention shipping delays?"</em>
+        </p>
+
+        <h3>What Was Measured</h3>
+        <p>
+          Measured on a real run with ground-truth answer key:
+        </p>
+        <ul>
+          <li><strong>Corpus:</strong> 29 support tickets (7 genuine shipping delays with varied phrasing without the keyword phrase, 3 near-miss distractors, 19 unrelated).</li>
+          <li><strong>Retrieval outcome:</strong> Top-5 retrieval returned <code>T029, T007, T018, T010, T002</code>, missing <code>T004</code> and <code>T013</code>. <strong>Recall: 5/7 (71.4%)</strong>.</li>
+          <li><strong>LLM behavior:</strong> Claude (run headless via CLI with all external tools disabled) correctly answered from the 5 tickets it received. It reported the count as 5 because top-k retrieval did not return the remaining two matches.</li>
+          <li><strong>Benchmark replication:</strong> Mirrored Snowflake's published finding (standard RAG scored 5.6% on analytical search over unstructured data vs 66.7% for analytical search). Snowflake trial test confirmed error 399258 (Cortex locked on trial).</li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <p>
+          Python 3.10+, <code>sentence-transformers</code> (<code>all-MiniLM-L6-v2</code> local embeddings), Chroma in-memory vector store, Claude Code CLI (<code>claude -p</code>), FastAPI backend, React frontend.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          <strong>Verified Source:</strong> <code>content/youtube/production/2026-09-26-rag-showdown-youtube-metadata.md</code> &amp; <code>ai-automation/apps/rag-showdown/README.md</code>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="https://github.com/KarthikeyanSivaraman/rag-showdown" target="_blank" rel="noopener">GitHub Repo &rarr;</a>
+          <a href="https://youtu.be/-TrC-v8EK9w" target="_blank" rel="noopener">YouTube Video &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 4: Credit Leak Checker -->
+    <article class="card" id="credit-leak-checker" style="margin-bottom: 2rem;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h2 class="card-title" style="margin: 0; border: none; padding: 0;">4. Snowflake Credit Leak Checker</h2>
+        <span class="badge badge-done">Shipped &bull; Public Tool</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Snowflake</span>
+        <span class="tag">FinOps</span>
+        <span class="tag">Cost Optimization</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Container Services</span>
+        <span class="tag">Open Source</span>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <h3>What It Is</h3>
+        <p>
+          An open-source, read-only diagnostic SQL script (strictly restricted to <code>SELECT</code>, <code>SHOW</code>, and <code>SET</code> operations) that audits a Snowflake account for idle services, misconfigured timeouts, and hidden cost leaks, generating a prioritized remediation report.
+        </p>
+
+        <h3>What Was Measured</h3>
+        <p>
+          Tested live on Karthik's own Snowflake trial account (AWS US East 2) on October 9, 2026:
+        </p>
+        <ul>
+          <li><strong>The leak:</strong> Detected that <strong>79% of credits</strong> (6.92 out of 8.73 credits consumed over 30 days) were not warehouse compute, but Snowpark Container Services running in the background.</li>
+          <li><strong>The culprits:</strong> A forgotten Snowflake Notebook and a Streamlit in Snowflake test app.</li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <p>
+          Snowflake SQL, Snowsight, Account Usage views, Snowpark Container Services, MIT License.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          <strong>Verified Source:</strong> <code>content/youtube/production/2026-10-27-credit-leak-checker-youtube-metadata.md</code> &amp; <code>brain/projects/project-snowflake-credit-leak-checker.md</code>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="https://github.com/KarthikeyanSivaraman/snowflake-credit-leak-checker" target="_blank" rel="noopener">GitHub Repo &rarr;</a>
+          <a href="https://youtu.be/1OXiVuE9sIw" target="_blank" rel="noopener">YouTube Video (Scheduled Oct 27) &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 5: Dataset QA -->
+    <article class="card" id="dataset-qa" style="margin-bottom: 2rem;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h2 class="card-title" style="margin: 0; border: none; padding: 0;">5. Dataset QA (Field-Inspection Audit Pipeline)</h2>
+        <span class="badge badge-done">Shipped &bull; Local Workspace</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Data Quality</span>
+        <span class="tag">Python</span>
+        <span class="tag">pandas</span>
+        <span class="tag">PyYAML</span>
+        <span class="tag">Data Contracts</span>
+        <span class="tag">SHA-256 Checksums</span>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <h3>What It Is</h3>
+        <p>
+          A rigorous data quality assurance and reconciliation pipeline for multi-round equipment field inspections. The pipeline reconciles raw CSV and Excel label logs against synthetic photo manifests, validates against explicit schema contracts, quarantines ambiguities, and packages immutable, cryptographically hashed releases.
+        </p>
+
+        <h3>What Was Measured</h3>
+        <p>
+          Measured on a full pipeline run over 104 synthetic label rows across 40 units, 2 sites, and 3 collection rounds:
+        </p>
+        <ul>
+          <li><strong>Audit yield:</strong> 92 rows passed validation; 12 rows quarantined; 15 open owner questions logged.</li>
+          <li><strong>Planted defects detected:</strong>
+            <ul>
+              <li>2 exact duplicate rows quarantined</li>
+              <li>2 near-duplicate candidates quarantined</li>
+              <li>34 mixed date format instances normalized per schema policy</li>
+              <li>3 missing required field rows quarantined</li>
+              <li>4 photo/label orphans identified (1 label without photo, 3 photos without labels)</li>
+              <li>1 score out of valid range (0-4) detected</li>
+              <li>2 site conflict rows quarantined for owner resolution</li>
+            </ul>
+          </li>
+          <li><strong>Release integrity:</strong> Generates immutable release packages with SHA-256 checksums, refusing to overwrite existing versions.</li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <p>
+          Python 3.11+, <code>pandas</code>, <code>PyYAML</code>, <code>openpyxl</code>, <code>pytest</code>, SHA-256 hashing. Zero network calls.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          <strong>Verified Source:</strong> <code>opportunities/portfolio/dataset-qa-sample/README.md</code> &amp; <code>reports/reconciliation_report.md</code>
+        </div>
+        <div>
+          <strong>Workspace:</strong> <code>opportunities/portfolio/dataset-qa-sample/</code>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 6: Power BI Makeover -->
+    <article class="card" id="pbi-makeover" style="margin-bottom: 2rem;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h2 class="card-title" style="margin: 0; border: none; padding: 0;">6. Power BI Makeover: Tidewell Coffee Co. (Fictional)</h2>
+        <span class="badge badge-done">Shipped Demo &bull; Local Workspace</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Power BI Desktop</span>
+        <span class="tag">PBIR</span>
+        <span class="tag">TMDL</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Data Modeling</span>
+        <span class="tag">Data Visualization</span>
+      </div>
+
+      <div class="image-comparison">
+        <figure>
+          <img src="assets/pbi-makeover-before.png" alt="Before: a default-theme Power BI report with raw field names, a 12-slice pie and misaligned visuals" width="1280" height="720">
+          <figcaption><strong>Before:</strong> Default theme, raw column names (<code>Sum of SalesAmt by Prod_Desc</code>), 12-slice pie, spiky daily line, unrounded costs, yellow box, red title, misaligned visuals.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/pbi-makeover-after.png" alt="After: the same data with a brand theme, KPI cards, revenue vs target by month and a revenue-by-cafe chart that flags the weakest cafe" width="1280" height="720">
+          <figcaption><strong>After:</strong> Brand theme, designed canvas background (nav rail, header), 4 KPI cards on a 16px grid, revenue vs target by month, and flagged weakest cafe.</figcaption>
+        </figure>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <h3>What It Is</h3>
+        <p>
+          A before-and-after demonstration turning a cluttered, default-style Power BI report into a clean, on-brand executive dashboard using the same underlying CSV data. Both reports are generated from files (PBIR + TMDL) by <code>build.py</code> and were checked in Power BI Desktop.
+        </p>
+        <p>
+          <strong>Notice:</strong> Tidewell Coffee Co. is fictional, and all data was synthetically generated (seeded in <code>build.py</code>). This is a technical portfolio demonstration, not a client project, and no commercial services or offers are presented.
+        </p>
+        <p>
+          The makeover contrasts two approaches to the same CSV data:
+        </p>
+        <ul>
+          <li><strong>Tidewell-Before.pbip:</strong> Default theme, raw column names (<code>Sum of SalesAmt by Prod_Desc</code>), a 12-slice pie chart, a spiky daily line chart, unrounded costs, a yellow callout box, a red title, and misaligned visuals.</li>
+          <li><strong>Tidewell-After.pbip:</strong> The same CSV data rebuilt with a brand theme file (<code>brand/tidewell-theme.json</code>), a designed background canvas (nav rail, header in <code>brand/tidewell-bg.png</code>), 4 KPI cards on a 16px grid (revenue, vs target, YoY growth, gross margin), revenue vs target by month, a revenue-by-cafe chart that flags the weakest cafe, at most 3 colors, friendly field names, and real DAX measures.</li>
+        </ul>
+        <p>
+          The after report features insight subtitles computed directly from the data: <em>"4 of 12 months missed target by 5% or more; worst was July (-14%)"</em> and <em>"Ferry Point Cafe is 34% below the average cafe"</em>.
+        </p>
+
+        <h3>What the Data Shows</h3>
+        <p>
+          In FY2025, revenue is up ~6% on 2024 and ~2% over target for the year, but July and August miss target by 9&ndash;14% (a summer slump built into the data). The makeover visualizes this pattern immediately so stakeholders see the operational issue in seconds.
+        </p>
+
+        <h3>Tech Stack &amp; Reusable Artifacts</h3>
+        <p>
+          Power BI Desktop (PBIR report format, TMDL semantic model definition language), DAX measures, Python 3 (data generation and PBIP builder using <code>Pillow</code>), JSON theme specifications. Reusable artifacts include <code>brand/tidewell-theme.json</code>, <code>brand/tidewell-bg.png</code>, and <code>MAKEOVER_CHECKLIST.md</code> (a 60-minute step-by-step process).
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          <strong>Verified Source:</strong> <code>portfolio/pbi-makeover-demo/README.md</code> &amp; <code>brain/raw/session-2026-10-18-pbi-makeover.md</code>
+        </div>
+        <div>
+          <strong>Workspace:</strong> <code>portfolio/pbi-makeover-demo/</code>
+        </div>
+      </div>
+    </article>
+
+    <!-- Navigation -->
+    <section style="margin-top: 2rem;">
+      <div class="callout">
+        <h4>Explore Related Artifacts</h4>
+        <p>
+          See how these implementations map to skills on the <a href="skills.html">Skills &rarr; Evidence</a> page, or watch walkthroughs in the <a href="videos.html">Video Library</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>Karthikeyan Sivaraman &bull; Data Engineering, Analytics, ML and AI Engineering</div>
+      <div>Static portfolio &bull; No trackers &bull; No external scripts &bull; Source-verified claims only</div>
+    </div>
+  </footer>
+</body>
+</html>
